@@ -31,3 +31,54 @@ After image processing is complete, visualize the results using charts, graphs, 
 Generate reports summarizing key insights, trends, or statistics derived from the image dataset.
 These reports can provide valuable information for decision-making or further analysis.
 By following this approach, you can leverage the scalability and parallelism of the MapReduce paradigm to efficiently process and analyze large image datasets, enabling tasks such as feature extraction, pattern recognition, or content analysis at scale.
+
+#####
+
+Image: "beach.jpg"
+
+Dimension: 1920x1080
+File Size: 2.3MB
+Format: JPEG
+Resolution: 1920x1080
+Image: "mountain.png"
+
+Dimension: 1280x720
+File Size: 1.5MB
+Format: PNG
+Resolution: 1280x720
+Image: "forest.jpg"
+
+Dimension: 1920x1080
+File Size: 1.8MB
+Format: JPEG
+Resolution: 1920x1080
+Image: "cityscape.jpg"
+
+Dimension: 1280x720
+File Size: 1.2MB
+Format: JPEG
+Resolution: 1280x720
+Image: "lake.png"
+
+Dimension: 1920x1080
+File Size: 2.0MB
+Format: PNG
+Resolution: 1920x1080
+During the intermediate key-value pairing for image processing, these images would be grouped based on their dimensions. Here's how they would be grouped:
+
+Group 1:
+
+Key: "1920x1080"
+Value 1: ("beach.jpg", 2.3MB, JPEG, 1920x1080)
+Value 2: ("forest.jpg", 1.8MB, JPEG, 1920x1080)
+Value 3: ("lake.png", 2.0MB, PNG, 1920x1080)
+Group 2:
+
+Key: "1280x720"
+Value 1: ("mountain.png", 1.5MB, PNG, 1280x720)
+Value 2: ("cityscape.jpg", 1.2MB, JPEG, 1280x720)
+This grouping allows for efficient processing of images with similar dimensions, as they can be processed together in subsequent map or reduce tasks.
+
+
+
+
